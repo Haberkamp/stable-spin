@@ -1,16 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useStableSpin(isLoading: boolean) {
-  const [showSpinner, setShowSpinner] = useState(false);
+  const [state, setState] = useState<"idle" | "invisible" | "visible">("idle");
+
   const timeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (isLoading) {
+      setState("invisible");
+
       timeout.current = setTimeout(() => {
-        setShowSpinner(true);
+        setState("visible");
+
+        timeout.current = setTimeout(() => {
+          setState("idle");
+        }, 100);
       }, 100);
     }
   }, [isLoading]);
 
-  return showSpinner;
+  return state === "visible";
 }

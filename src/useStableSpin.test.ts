@@ -68,3 +68,23 @@ test("shows the spinner even when the request finishe before the minimum duratio
   // ASSERT
   expect(hook.result.current).toBe(true);
 });
+
+test("does not show a spinner when the request finishes after the minimum duration", () => {
+  // ARRAGE
+  const hook = renderHook(useStableSpin, {
+    initialProps: false,
+  });
+
+  // ACT
+  // Start network request
+  hook.rerender(true);
+
+  act(() => {
+    // Finish network request
+    vi.advanceTimersByTime(200);
+    hook.rerender(false);
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(false);
+});

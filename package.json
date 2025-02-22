@@ -12,16 +12,16 @@
   "bugs": {
     "url": "https://github.com/Haberkamp/stable-spin/issues"
   },
-  "author": "Nils Haberkamp <haberkamp.n@gmail.com> (https://haberkamp.dev)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/haberkamp/stable-spin.git"
   },
+  "license": "MIT",
+  "author": "Nils Haberkamp <haberkamp.n@gmail.com> (https://haberkamp.dev)",
+  "type": "module",
   "files": [
     "dist"
   ],
-  "type": "module",
-  "license": "MIT",
   "devDependencies": {
     "typescript": "^5.7.3"
   }

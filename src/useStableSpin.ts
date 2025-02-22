@@ -16,7 +16,6 @@ export function useStableSpin(
   useEffect(() => {
     if (isLoading && state === "idle") {
       if (timeout.current) clearTimeout(timeout.current);
-
       setState("delay");
 
       timeout.current = setTimeout(() => {

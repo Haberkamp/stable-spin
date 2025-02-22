@@ -19,6 +19,7 @@
   "license": "MIT",
   "author": "Nils Haberkamp <haberkamp.n@gmail.com> (https://haberkamp.dev)",
   "type": "module",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],

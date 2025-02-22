@@ -34,7 +34,7 @@ export function useStableSpin(
       if (timeout.current) clearTimeout(timeout.current);
       setState("idle");
     }
-  }, [isLoading, state]);
+  }, [isLoading, state, config.delay, config.minDuration]);
 
   useEffect(() => {
     return () => {

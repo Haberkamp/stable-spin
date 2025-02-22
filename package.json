@@ -1,0 +1,17 @@
+{
+  "name": "stable-spin",
+  "version": "0.0.1",
+  "description": "A framework agnostic helper for displaying spinners",
+  "keywords": ["loading", "spinner", "ux", "user-experience"],
+  "homepage": "https://github.com/Haberkamp/stable-spin",
+  "bugs": {
+    "url": "https://github.com/Haberkamp/stable-spin/issues"
+  },
+  "author": "Nils Haberkamp <haberkamp.n@gmail.com> (https://haberkamp.dev)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haberkamp/stable-spin.git"
+  },
+  "files": ["dist"],
+  "type": "module"
+}

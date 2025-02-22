@@ -24,10 +24,10 @@
     "dist"
   ],
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "build": "tsc",
     "exports:check": "attw --pack .",
-    "build": "tsc"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",

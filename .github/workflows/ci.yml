@@ -40,3 +40,4 @@ jobs:
         run: |
           corepack disable npm
           pnpm run exports:check
+          corepack enable npm

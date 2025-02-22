@@ -30,3 +30,21 @@ test("does not show the spinner when the request finishes before the delay", () 
   // ASSERT
   expect(hook.result.current).toBe(false);
 });
+
+test("shows the spinner when the request takes longer than the delay", () => {
+  // ARRAGE
+  const hook = renderHook(useStableSpin, {
+    initialProps: false,
+  });
+
+  // ACT
+  // Start network request
+  hook.rerender(true);
+
+  act(() => {
+    vi.advanceTimersByTime(100);
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(true);
+});

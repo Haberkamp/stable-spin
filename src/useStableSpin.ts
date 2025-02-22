@@ -28,7 +28,7 @@ export function useStableSpin(isLoading: boolean) {
       if (timeout.current) clearTimeout(timeout.current);
       setState("idle");
     }
-  }, [isLoading]);
+  }, [isLoading, state]);
 
   useEffect(() => {
     return () => {

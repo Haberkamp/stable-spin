@@ -4,7 +4,7 @@ export function useStableSpin(
   isLoading: boolean,
   options: { delay: number; minDuration: number } = {
     delay: 100,
-    minDuration: 100,
+    minDuration: 400,
   }
 ) {
   const [state, setState] = useState<

@@ -17,6 +17,8 @@ export function useStableSpin(
     if (isLoading && state === "idle") {
       if (timeout.current) clearTimeout(timeout.current);
 
+      setState("invisible");
+
       timeout.current = setTimeout(() => {
         setState("visible");
 

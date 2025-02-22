@@ -88,3 +88,21 @@ test("does not show a spinner when the request finishes after the minimum durati
   // ASSERT
   expect(hook.result.current).toBe(false);
 });
+
+test("shows a spinner when the request takes longer than the minimum duration", () => {
+  // ARRAGE
+  const hook = renderHook(useStableSpin, {
+    initialProps: false,
+  });
+
+  // ACT
+  // Start network request
+  hook.rerender(true);
+
+  act(() => {
+    vi.advanceTimersByTime(250);
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(true);
+});

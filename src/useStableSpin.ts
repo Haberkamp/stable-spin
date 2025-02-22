@@ -7,7 +7,7 @@ export function useStableSpin(
     minDuration: 400,
   }
 ) {
-  const [state, setState] = useState<"idle" | "delay" | "visible" | "expired">(
+  const [state, setState] = useState<"idle" | "delay" | "show" | "expired">(
     "idle"
   );
 
@@ -20,7 +20,7 @@ export function useStableSpin(
       setState("delay");
 
       timeout.current = setTimeout(() => {
-        setState("visible");
+        setState("show");
 
         timeout.current = setTimeout(() => {
           setState("expired");
@@ -28,7 +28,7 @@ export function useStableSpin(
       }, options.delay);
     }
 
-    if (!isLoading && state !== "visible") {
+    if (!isLoading && state !== "show") {
       if (timeout.current) clearTimeout(timeout.current);
       setState("idle");
     }
@@ -40,5 +40,5 @@ export function useStableSpin(
     };
   }, []);
 
-  return ["visible", "expired"].includes(state);
+  return ["show", "expired"].includes(state);
 }

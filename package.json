@@ -25,7 +25,8 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "exports:check": "attw --pack ."
+    "exports:check": "attw --pack .",
+    "build": "tsc"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",

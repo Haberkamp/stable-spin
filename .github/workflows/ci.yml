@@ -33,5 +33,10 @@ jobs:
       - name: Check formatting
         run: pnpm run format:check
 
+      - name: Build package
+        run: pnpm run build
+
       - name: Check exports
-        run: pnpm run exports:check
+        run: |
+          corepack disable npm
+          pnpm run exports:check

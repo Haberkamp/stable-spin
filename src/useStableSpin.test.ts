@@ -150,3 +150,70 @@ test("shows a spinner when the request takes longer than the minimum duration", 
   // ASSERT
   expect(hook.result.current).toBe(true);
 });
+
+test("it is possible to customize the delay", () => {
+  // ARRAGE
+  const options = { delay: 200 };
+
+  const hook = renderHook(
+    ({ isLoading, options }) => useStableSpin(isLoading, options),
+    {
+      initialProps: {
+        isLoading: false,
+        options,
+      },
+    }
+  );
+
+  // ACT
+  // Start network request
+  hook.rerender({ isLoading: true, options });
+
+  act(() => {
+    vi.advanceTimersByTime(150);
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(false);
+
+  // ACT
+  act(() => {
+    vi.advanceTimersByTime(50);
+  });
+
+  expect(hook.result.current).toBe(true);
+});
+
+test("is is possible to customize the minimum duration", () => {
+  // ARRAGE
+  const options = { minDuration: 200 };
+
+  const hook = renderHook(
+    ({ isLoading, options }) => useStableSpin(isLoading, options),
+    {
+      initialProps: {
+        isLoading: false,
+        options,
+      },
+    }
+  );
+
+  // ACT
+  // Start network request
+  hook.rerender({ isLoading: true, options });
+
+  act(() => {
+    vi.advanceTimersByTime(250);
+    hook.rerender({ isLoading: false, options });
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(true);
+
+  // ACT
+  act(() => {
+    vi.advanceTimersByTime(50);
+  });
+
+  expect(hook.result.current).toBe(false);
+});

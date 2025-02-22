@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
+const DEFAULT_OPTIONS = {
+  delay: 100,
+  minDuration: 400,
+};
+
 export function useStableSpin(
   isLoading: boolean,
-  options: { delay: number; minDuration: number } = {
-    delay: 100,
-    minDuration: 400,
-  }
+  options?: Partial<typeof DEFAULT_OPTIONS>
 ) {
+  const config = Object.assign({}, DEFAULT_OPTIONS, options);
   const [state, setState] = useState<"idle" | "delay" | "show" | "expired">(
     "idle"
   );
@@ -23,8 +26,8 @@ export function useStableSpin(
 
         timeout.current = setTimeout(() => {
           setState("expired");
-        }, options.minDuration);
-      }, options.delay);
+        }, config.minDuration);
+      }, config.delay);
     }
 
     if (!isLoading && state !== "show") {

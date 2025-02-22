@@ -22,9 +22,7 @@ jobs:
         with:
           node-version: "22"
 
-      - uses: volta-cli/action@v4
-        env:
-          VOLTA_FEATURE_PNPM: 1
+      - run: corepack enable && corepack enable npm
 
       - name: Install dependencies
         run: pnpm i

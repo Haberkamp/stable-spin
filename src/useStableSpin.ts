@@ -7,9 +7,9 @@ export function useStableSpin(
     minDuration: 400,
   }
 ) {
-  const [state, setState] = useState<
-    "idle" | "invisible" | "visible" | "expired"
-  >("idle");
+  const [state, setState] = useState<"idle" | "delay" | "visible" | "expired">(
+    "idle"
+  );
 
   const timeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -17,7 +17,7 @@ export function useStableSpin(
     if (isLoading && state === "idle") {
       if (timeout.current) clearTimeout(timeout.current);
 
-      setState("invisible");
+      setState("delay");
 
       timeout.current = setTimeout(() => {
         setState("visible");

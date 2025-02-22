@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useStableSpin(isLoading: boolean) {
+export function useStableSpin(
+  isLoading: boolean,
+  options: { delay: number; minDuration: number } = {
+    delay: 100,
+    minDuration: 100,
+  }
+) {
   const [state, setState] = useState<
     "idle" | "invisible" | "visible" | "expired"
   >("idle");
@@ -18,10 +24,10 @@ export function useStableSpin(isLoading: boolean) {
 
         timeout.current = setTimeout(() => {
           setState("expired");
-        }, 100);
+        }, options.minDuration);
 
         setState("visible");
-      }, 100);
+      }, options.delay);
     }
 
     if (!isLoading && state !== "visible") {

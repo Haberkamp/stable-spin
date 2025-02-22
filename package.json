@@ -25,6 +25,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "dev": "vitest",
     "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

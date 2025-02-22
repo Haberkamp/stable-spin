@@ -23,5 +23,7 @@
 
     /* AND if you're building for a library: */
     "declaration": true
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

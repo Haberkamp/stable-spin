@@ -18,15 +18,11 @@ export function useStableSpin(
       if (timeout.current) clearTimeout(timeout.current);
 
       timeout.current = setTimeout(() => {
-        if (!isLoading) {
-          return setState("idle");
-        }
+        setState("visible");
 
         timeout.current = setTimeout(() => {
           setState("expired");
         }, options.minDuration);
-
-        setState("visible");
       }, options.delay);
     }
 

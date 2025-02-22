@@ -48,3 +48,23 @@ test("shows the spinner when the request takes longer than the delay", () => {
   // ASSERT
   expect(hook.result.current).toBe(true);
 });
+
+test("shows the spinner even when the request finishe before the minimum duration", () => {
+  // ARRAGE
+  const hook = renderHook(useStableSpin, {
+    initialProps: false,
+  });
+
+  // ACT
+  // Start network request
+  hook.rerender(true);
+
+  act(() => {
+    // Finish network request
+    vi.advanceTimersByTime(150);
+    hook.rerender(false);
+  });
+
+  // ASSERT
+  expect(hook.result.current).toBe(true);
+});

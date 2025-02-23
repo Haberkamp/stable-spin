@@ -22,4 +22,8 @@ jobs:
 
       - run: npm i -g --force corepack && corepack enable
 
+      - run: pnpm i
+
+      - run: pnpm run build
+
       - run: npx changeset version

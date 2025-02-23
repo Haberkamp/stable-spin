@@ -30,6 +30,12 @@ jobs:
       - name: Run tests
         run: pnpm run test
 
+      - name: Run E2E tests
+        working-directory: tests/nextjs
+        run: |
+          pnpm i
+          pnpm run test
+
       - name: Check formatting
         run: pnpm run format:check
 

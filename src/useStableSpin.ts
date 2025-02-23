@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
+export const DEFAULT_DELAY = 100;
+export const DEFAULT_MIN_DURATION = 400;
+
 const DEFAULT_OPTIONS = {
-  delay: 100,
-  minDuration: 400,
+  delay: DEFAULT_DELAY,
+  minDuration: DEFAULT_MIN_DURATION,
   isSSR: false,
 };
 

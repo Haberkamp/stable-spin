@@ -37,7 +37,7 @@ jobs:
         working-directory: tests/nextjs
         run: |
           pnpm i
-          pnpm exec playwright install
+          pnpm exec playwright install --with-deps
           pnpm run test
 
       - name: Check formatting

@@ -29,7 +29,9 @@
     "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "vitest run"
+    "release": "changeset version && changeset publish",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm run exports:check && npm run format:check && npm run test"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",

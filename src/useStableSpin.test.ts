@@ -25,7 +25,7 @@ test("does not show the spinner when the request finishes before the delay", () 
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT
@@ -74,7 +74,7 @@ test("shows the spinner even when the request finishe before the minimum duratio
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT
@@ -105,7 +105,7 @@ test("does not show a spinner when the request finishes after the minimum durati
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT
@@ -136,7 +136,7 @@ test("shows a spinner when the request takes longer than the minimum duration", 
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT
@@ -162,7 +162,7 @@ test("it is possible to customize the delay", () => {
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT
@@ -195,7 +195,7 @@ test("is is possible to customize the minimum duration", () => {
         isLoading: false,
         options,
       },
-    }
+    },
   );
 
   // ACT

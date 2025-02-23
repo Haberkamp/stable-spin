@@ -20,6 +20,6 @@ jobs:
         with:
           node-version: "22"
 
-      - run: npm i -g --force corepack && corepack enable && corepack enable npm
+      - run: npm i -g --force corepack && corepack enable
 
-      - run: echo "Release package"
+      - run: npx changeset version

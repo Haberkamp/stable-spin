@@ -31,7 +31,7 @@ jobs:
         run: npm i -g --force corepack && corepack enable && corepack enable npm
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm i --frozen-lockfile --prefer-offline
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

@@ -55,19 +55,19 @@ You can install the package just with your favorite package manager like: npm, y
 Using npm:
 
 ```bash
-npm install stable-spin
+npm install @stable-spin/react
 ```
 
 Using yarn:
 
 ```bash
-yarn add stable-spin
+yarn add @stable-spin/react
 ```
 
 Using pnpm:
 
 ```bash
-pnpm i stable-spin
+pnpm i @stable-spin/react
 ```
 
 ## Feedback and Contributing

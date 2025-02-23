@@ -21,14 +21,14 @@ function useIsSSR() {
 
 export function useStableSpin(
   isLoading: boolean,
-  options?: Partial<typeof DEFAULT_OPTIONS>,
+  options?: Partial<typeof DEFAULT_OPTIONS>
 ) {
   const config = Object.assign({}, DEFAULT_OPTIONS, options);
 
   const isSSR = useIsSSR() && config.isSSR;
 
   const [state, setState] = useState<"idle" | "delay" | "show" | "expired">(
-    isSSR && isLoading ? "show" : "idle",
+    isSSR && isLoading ? "show" : "idle"
   );
 
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);

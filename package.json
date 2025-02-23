@@ -1,7 +1,7 @@
 {
-  "name": "stable-spin",
+  "name": "@stable-spin/react",
   "version": "0.0.1",
-  "description": "A framework agnostic helper for displaying spinners",
+  "description": "A helper for displaying spinners",
   "keywords": [
     "loading",
     "spinner",

@@ -30,6 +30,15 @@ jobs:
       - name: Build package
         run: pnpm run build
 
+      - name: Check formatting
+        run: pnpm run format:check
+
+      - name: Check exports
+        run: |
+          corepack disable npm
+          pnpm run exports:check
+          corepack enable npm
+
       - name: Run tests
         run: pnpm run test
 
@@ -39,12 +48,3 @@ jobs:
           pnpm i
           pnpm exec playwright install --with-deps
           pnpm run test
-
-      - name: Check formatting
-        run: pnpm run format:check
-
-      - name: Check exports
-        run: |
-          corepack disable npm
-          pnpm run exports:check
-          corepack enable npm

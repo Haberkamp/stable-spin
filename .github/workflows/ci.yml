@@ -45,9 +45,10 @@ jobs:
       - name: Run tests
         run: npx turbo run test
 
-      - name: Run E2E tests
-        working-directory: packages/react/tests/nextjs
-        run: |
-          pnpm i
-          npx playwright install --with-deps
-          pnpm run test
+      - run: cd packages/react/tests/nextjs
+
+      - run: pnpm i
+
+      - run: npx playwright install --with-deps
+
+      - run: pnpm run test

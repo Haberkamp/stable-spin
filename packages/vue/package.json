@@ -31,7 +31,6 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "release": "pnpm run build && changeset publish",
     "test": "vitest run"
   },
   "devDependencies": {

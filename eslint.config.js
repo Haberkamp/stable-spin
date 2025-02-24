@@ -8,5 +8,15 @@ export default tseslint.config(
     ignores: ["node_modules", "dist", "tests/nextjs"],
   },
   eslint.configs.recommended,
-  tseslint.configs.recommended
+  tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ["eslint.config.js", "vitest.config.ts"],
+        },
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  }
 );

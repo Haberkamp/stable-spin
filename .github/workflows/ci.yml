@@ -33,6 +33,9 @@ jobs:
       - name: Check formatting
         run: pnpm run format:check
 
+      - name: Check linting
+        run: pnpm run format:check
+
       - name: Check exports
         run: |
           corepack disable npm

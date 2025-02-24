@@ -18,6 +18,7 @@
     },
     "format": {},
     "format:check": {},
-    "test": {}
+    "test": {},
+    "release": {}
   }
 }

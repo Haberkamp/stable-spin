@@ -49,5 +49,5 @@ jobs:
         working-directory: packages/react/tests/nextjs
         run: |
           pnpm i
-          pnpm exec playwright install --with-deps
+          npx playwright install --with-deps
           pnpm run test

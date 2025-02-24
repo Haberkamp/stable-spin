@@ -28,26 +28,26 @@ jobs:
         run: pnpm i --frozen-lockfile --prefer-offline
 
       - name: Build package
-        run: pnpm run build
+        run: npx turbo run build
 
       - name: Check formatting
-        run: pnpm run format:check
+        run: npx turbo run format:check
 
       - name: Check linting
-        run: pnpm run format:check
+        run: npx turbo run format:check
 
       - name: Check exports
         run: |
           corepack disable npm
-          pnpm run exports:check
+          npx turbo run exports:check
           corepack enable npm
 
       - name: Run tests
-        run: pnpm run test
+        run: npx turbo run test
 
       - name: Run E2E tests
         working-directory: tests/nextjs
         run: |
           pnpm i
           pnpm exec playwright install --with-deps
-          pnpm run test
+          npx turbo run test

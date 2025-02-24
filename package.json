@@ -1,8 +1,8 @@
 {
   "name": "@stable-spin/react",
   "version": "1.1.0",
-  "description": "A helper for displaying spinners",
   "private": false,
+  "description": "A helper for displaying spinners",
   "keywords": [
     "loading",
     "spinner",
@@ -30,6 +30,7 @@
     "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "eslint .",
     "release": "pnpm run build && changeset publish",
     "test": "vitest run"
   },

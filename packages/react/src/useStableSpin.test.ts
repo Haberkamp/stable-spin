@@ -60,7 +60,7 @@ test("shows the spinner when the request takes longer than the delay", () => {
   expect(hook.result.current).toBe(true);
 });
 
-test("shows the spinner even when the request finishe before the minimum duration", () => {
+test("shows the spinner even when the request finishes before the minimum duration", () => {
   // ARRAGE
   const options = {
     delay: 100,

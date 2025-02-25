@@ -12,6 +12,7 @@ export function useStableSpin(
   isLoading: Ref<boolean>,
   options?: Partial<typeof DEFAULT_OPTIONS>
 ) {
+  // TODO: add SSR support
   const config = Object.assign({}, DEFAULT_OPTIONS, options);
 
   const state = ref<"idle" | "delay" | "show" | "expired">("idle");

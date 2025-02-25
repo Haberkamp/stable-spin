@@ -38,6 +38,7 @@
     "@eslint/js": "^9.21.0",
     "@testing-library/vue": "^8.1.0",
     "eslint": "^9.21.0",
+    "flush-promises": "^1.0.2",
     "happy-dom": "^17.1.2",
     "prettier": "^3.5.2",
     "typescript": "^5.7.3",

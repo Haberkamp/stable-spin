@@ -37,7 +37,7 @@ import { useStableSpin } from "@stable-spin/vue";
 const isLoading = ref(false);
 const showSpinner = useStableSpin(isLoading);
 
-onMount(() => {
+onMounted(() => {
   isLoading.value = true;
 
   fetch("https://my-endpoint.com")

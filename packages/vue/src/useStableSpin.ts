@@ -1,4 +1,4 @@
-import { computed, onMounted, ref, watch, type Ref } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch, type Ref } from "vue";
 
 export const DEFAULT_DELAY = 100;
 export const DEFAULT_MIN_DURATION = 100;
@@ -61,7 +61,9 @@ export function useStableSpin(
 
   const showSpinner = computed(() => ["show", "expired"].includes(state.value));
 
-  // TODO: clear timout when unmounting the component
+  onUnmounted(() => {
+    if (timeout.value) clearTimeout(timeout.value);
+  });
 
   return showSpinner;
 }

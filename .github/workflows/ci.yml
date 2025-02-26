@@ -45,11 +45,26 @@ jobs:
       - name: Run tests
         run: npx turbo run test
 
-      - run: pnpm i
+      - name: Install dependencies for Next.js integration test
+        run: pnpm i
         working-directory: ./packages/react/tests/nextjs
 
-      - run: npx playwright install --with-deps
+      - name: Install playwright with dependencies
+        run: npx playwright install --with-deps
         working-directory: ./packages/react/tests/nextjs
 
-      - run: pnpm run test
+      - name: Run Next.js integration tests
+        run: pnpm run test
         working-directory: ./packages/react/tests/nextjs
+
+      - name: Install dependencies for Nuxt integration test
+        run: pnpm i
+        working-directory: ./packages/vue/tests/nuxt
+
+      - name: Install playwright with dependencies
+        run: npx playwright install --with-deps
+        working-directory: ./packages/vue/tests/nuxt
+
+      - name: Run Nuxt integration tests
+        run: pnpm run test
+        working-directory: ./packages/vue/tests/nuxt

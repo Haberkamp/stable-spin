@@ -1,5 +1,11 @@
 # @stable-spin/vue
 
+## 1.0.1
+
+### Patch Changes
+
+- e1b6dd2: Fix example code in README
+
 ## 1.0.0
 
 ### Major Changes

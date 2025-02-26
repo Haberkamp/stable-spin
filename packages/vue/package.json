@@ -1,6 +1,6 @@
 {
   "name": "@stable-spin/vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "A helper for displaying spinners",
   "keywords": [

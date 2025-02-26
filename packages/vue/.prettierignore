@@ -3,4 +3,5 @@ dist/
 pnpm-lock.yaml
 playwright-report/
 test-results/
-tests/nextjs/.next/
+tests/nextjs/.output/
+tests/nextjs/.nuxt/

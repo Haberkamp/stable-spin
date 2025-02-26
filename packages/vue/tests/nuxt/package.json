@@ -12,7 +12,8 @@
   "dependencies": {
     "nuxt": "^3.15.4",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "@stable-spin/vue": "file:../.."
   },
   "devDependencies": {
     "@playwright/test": "^1.50.1",

@@ -1,5 +1,11 @@
 # @stable-spin/react
 
+## 1.1.1
+
+### Patch Changes
+
+- dc54545: Update README.md
+
 ## 1.1.0
 
 ### Minor Changes

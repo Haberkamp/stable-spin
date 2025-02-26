@@ -1,6 +1,6 @@
 {
   "name": "@stable-spin/react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "A helper for displaying spinners",
   "keywords": [

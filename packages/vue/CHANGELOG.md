@@ -1,5 +1,11 @@
 # @stable-spin/vue
 
+## 1.0.2
+
+### Patch Changes
+
+- 2250b8c: Remove unnecessary files from build
+
 ## 1.0.1
 
 ### Patch Changes

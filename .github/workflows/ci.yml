@@ -66,5 +66,5 @@ jobs:
         working-directory: ./packages/vue/tests/nuxt
 
       - name: Run Nuxt integration tests
-        run: pnpm run test
+        run: DEBUG=pw:webserver pnpm run test
         working-directory: ./packages/vue/tests/nuxt
